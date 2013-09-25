@@ -3,6 +3,7 @@ var B = false;
 // Клетка с фигурой
 var Q = true;
 
+// Тип данных: Board
 // Пустая доска с размерностью n=4
 var n4emptBrd = [B, B, B, B,
                  B, B, B, B,
@@ -34,7 +35,7 @@ var rcToPos = function(r,c,n){
 
 // Создает пустую доску n*n элементов
 // @param {Natural} n Размерность доски
-// @return {arrayof: boolean} Доска
+// @return {Board}
 var createEmptyBoard = function(n){
   var b = [];
   for(var i=0;i<n*n;i++){ b.push(B); }
@@ -47,8 +48,8 @@ var createEmptyBoard = function(n){
 })();
 
 // Решает проблемы n-ферзей
-// @param {arrayof: boolean} b Доска
-// @return {arrayof: boolean | false}:
+// @param {Board} b Доска
+// @return {Board | false}:
 //          Если задача имеет решение тогда доску
 //          Если решения нет тогда false
 
@@ -59,6 +60,5 @@ var solve = function(b){return false}; // заглушка
   console.log("Тест5:", solve(createEmptyBoard(2))==false);
   console.log("Тест6:", solve(createEmptyBoard(4))==n4solBrd);
 })();
-
 
 
