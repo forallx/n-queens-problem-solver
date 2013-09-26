@@ -69,8 +69,21 @@ function solve(b){
 
   // Ищет решения для списка потомков
   // @param {arrayof: Board} lob
+  // @return {Board | false}
   function solveChilds(lob){
-
+    if(lob.length==0){
+      return false; // базовый случай
+    }else{
+      // рекурсивный случай
+      var first = lob[0];
+      var rest  = lob.slice(1,lob.length);
+      var tryBrd = solveBrd(first);
+      if(tryBrd!=false){
+        return tryBrd;
+      }else{
+        return solveChilds(rest);
+      }
+    }
   };
 
   return solveBrd(b);
