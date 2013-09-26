@@ -53,7 +53,23 @@ var createEmptyBoard = function(n){
 //          Если задача имеет решение тогда доску
 //          Если решения нет тогда false
 
-var solve = function(b){return false}; // заглушка
+// var solve = function(b){return false}; // заглушка
+
+var solve = function(b){
+  // Ищет решение для данной доски
+  // @param {Board} b
+  var solveBrd = function(b){
+
+  };
+
+  // Ищет решения для списка потомков
+  // @param {arrayof: Board} lob
+  var solveChilds = function(lob){
+
+  };
+
+  return solveBrd(b);
+};
 
 (function(){
   console.log("Тест4:", solve(createEmptyBoard(1))==[Q]);
