@@ -105,6 +105,48 @@ function isSolved(b){ return false; } // Заглушка
 // Все несостоятельные доски вырезаются
 // @param  {Board} b
 // @return {arrayof: Board}
+// function nextBoards(b){ return []; } // Заглушка
+function nextBoards(b){
+  return keepOnlyValid(fillBlanks(b));
+}
+
+// Тесты для nextBoards
+(function(){
+  console.log("Тест7:", nextBoards(createEmptyBoard(1)).toString()==keepOnlyValid(fillBlanks(createEmptyBoard(1))).toString());
+})();
+
+// Создает массив досок в которых в каждой пустой клетке
+// исходной доски стоит фигурка
+// @param  {Board} b Исходная доска
+// @return {arrayof: Board}
+
+function fillBlanks(b){ return []; } // заглушка
+
+// Тесты для fillBlanks
+(function(){
+  console.log(
+    "Тест8:",
+    (function(){
+      var x = fillBlanks(createEmptyBoard(1));
+      return x.length==1 && x[0]==Q;
+    })());
+  console.log("тест9:", fillBlanks([Q]).length==0);
+  console.log(
+    "тест10:",
+    (function(){
+      var x = fillBlanks(createEmptyBoard(2));
+      return x.length==4 &&
+        x[0].toString()==[Q,B,B,B].toString() &&
+        x[1].toString()==[B,Q,B,B].toString() &&
+        x[2].toString()==[B,B,Q,B].toString() &&
+        x[3].toString()==[B,B,B,Q].toString()
+    })());
+})();
+
+// Фильтрует массив досок оставляя только те доски
+// в которых ни одна фигурка не атакует другую
+// @param  {arrayof: Board}
+// @return {arrayof: Board}
 // !!!
-function nextBoards(b){ return []; } // Заглушка
+function keepOnlyValid(b){ return []; } // заглушка
 
