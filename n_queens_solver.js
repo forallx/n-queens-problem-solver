@@ -63,7 +63,7 @@ function solve(b){
     if(isSolved(b)){
       return b;
     }else{
-      solveChilds(nextBoards(b));
+      return solveChilds(nextBoards(b));
     }
   };
 
