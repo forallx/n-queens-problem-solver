@@ -58,8 +58,13 @@ var createEmptyBoard = function(n){
 var solve = function(b){
   // Ищет решение для данной доски
   // @param {Board} b
+  // @return {Board | false}
   var solveBrd = function(b){
-
+    if(isSolved(b)){
+      return b;
+    }else{
+      solveChilds(nextBoards(b));
+    }
   };
 
   // Ищет решения для списка потомков
@@ -77,4 +82,16 @@ var solve = function(b){
   console.log("Тест6:", solve(createEmptyBoard(4))==n4solBrd);
 })();
 
+// Является ли данная доска решением?
+// @param  {Board} b
+// @return {Boolean}
+// !!!
+var isSolved = function(b){ return false; } // Заглушка
+
+// Создает массив потомков данной доски
+// Все несостоятельные доски вырезаются
+// @param  {Board} b
+// @return {arrayof: Board}
+// !!!
+var nextBoards = function(b){ return []; } // Заглушка
 
