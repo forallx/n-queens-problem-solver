@@ -22,7 +22,7 @@ var n4solBrd = [B, Q, B, B,
 // @param  {Integer[0...]} c Столбец
 // @param  {Natural}       n Размерность доски
 // @return {Natural} Позиция
-var rcToPos = function(r,c,n){
+function rcToPos(r,c,n){
   return r*n+c;
 };
 
@@ -36,7 +36,7 @@ var rcToPos = function(r,c,n){
 // Создает пустую доску n*n элементов
 // @param {Natural} n Размерность доски
 // @return {Board}
-var createEmptyBoard = function(n){
+function createEmptyBoard(n){
   var b = [];
   for(var i=0;i<n*n;i++){ b.push(B); }
   return b;
@@ -53,13 +53,13 @@ var createEmptyBoard = function(n){
 //          Если задача имеет решение тогда доску
 //          Если решения нет тогда false
 
-// var solve = function(b){return false}; // заглушка
+// function solve(b){return false}; // заглушка
 
-var solve = function(b){
+function solve(b){
   // Ищет решение для данной доски
   // @param {Board} b
   // @return {Board | false}
-  var solveBrd = function(b){
+  function solveBrd(b){
     if(isSolved(b)){
       return b;
     }else{
@@ -69,7 +69,7 @@ var solve = function(b){
 
   // Ищет решения для списка потомков
   // @param {arrayof: Board} lob
-  var solveChilds = function(lob){
+  function solveChilds(lob){
 
   };
 
@@ -86,12 +86,12 @@ var solve = function(b){
 // @param  {Board} b
 // @return {Boolean}
 // !!!
-var isSolved = function(b){ return false; } // Заглушка
+function isSolved(b){ return false; } // Заглушка
 
 // Создает массив потомков данной доски
 // Все несостоятельные доски вырезаются
 // @param  {Board} b
 // @return {arrayof: Board}
 // !!!
-var nextBoards = function(b){ return []; } // Заглушка
+function nextBoards(b){ return []; } // Заглушка
 
