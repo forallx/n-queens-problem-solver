@@ -120,7 +120,28 @@ function nextBoards(b){
 // @param  {Board} b Исходная доска
 // @return {arrayof: Board}
 
-function fillBlanks(b){ return []; } // заглушка
+// function fillBlanks(b){ return []; } // заглушка
+
+function fillBlanks(b){
+  // @param {Board}   brd Итерируемая доска
+  // @param {Natural} pos Позиция
+  function iter(brd, pos){
+    if(brd.length==0){
+      return []; // базовый случай
+    }else{
+      var first = brd[0];
+      var rest  = brd.slice(1,brd.length);
+      if(first!=Q){
+        return [fillSquare(b, pos, Q)].concat(iter(rest, pos+1));
+      }else{
+        return iter(rest, pos+1);
+      }
+    }
+  }
+
+  var clone = b.slice(0, b.length); // Клонируем доску
+  return iter(clone, 0);
+}
 
 // Тесты для fillBlanks
 (function(){
@@ -128,7 +149,7 @@ function fillBlanks(b){ return []; } // заглушка
     "Тест8:",
     (function(){
       var x = fillBlanks(createEmptyBoard(1));
-      return x.length==1 && x[0]==Q;
+      return x.length==1 && x[0][0]==Q;
     })());
   console.log("тест9:", fillBlanks([Q]).length==0);
   console.log(
@@ -142,6 +163,22 @@ function fillBlanks(b){ return []; } // заглушка
         x[3].toString()==[B,B,B,Q].toString()
     })());
 })();
+
+// Ставит на доску в данную позицию данное значение (ферзь или пустая)
+// @param {Board}   b Доска
+// @param {Natural} p Позиция
+// @param {Q | B}   v Ферзь или пустая?
+
+// Тесты для fillSquare
+(function(){
+  console.log("Тест10:", fillSquare([B],0,Q).toString()==[Q].toString());
+})
+
+function fillSquare(b,p,v){
+  var clone = b.slice(0, b.length);
+  clone[p]=v;
+  return clone;
+}
 
 // Фильтрует массив досок оставляя только те доски
 // в которых ни одна фигурка не атакует другую
