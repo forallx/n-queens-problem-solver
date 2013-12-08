@@ -209,3 +209,21 @@ function keepOnlyValid(lob){
 // !!!
 function isValid(b){ return false; }
 
+(function(){
+  // Не валидна если фигурки на одной горизонтали
+  console.log("Тест16:", isValid([Q,Q,
+                                  B,B])==false);
+  // Не валидна если фигурки на одной вертикали
+  console.log("Тест17:", isValid([Q,B,
+                                  Q,B])==false);
+  // Не валидна если фигурки на одной диагонали
+  console.log("Тест18:", isValid([Q,B,
+                                  B,Q])==false);
+  console.log("Тест19:", isValid([B,Q,
+                                  Q,B])==false);
+  // Валидные доски
+  console.log("Тест20:", isValid([Q])==true);
+  console.log("Тест21:", isValid(n4emptBrd)==true);
+  console.log("Тест22:", isValid(n4solBrd)==true);
+})();
+
