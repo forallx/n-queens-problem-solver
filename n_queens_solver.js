@@ -171,8 +171,8 @@ function fillBlanks(b){
 
 // Тесты для fillSquare
 (function(){
-  console.log("Тест10:", fillSquare([B],0,Q).toString()==[Q].toString());
-})
+  console.log("Тест11:", fillSquare([B],0,Q).toString()==[Q].toString());
+})()
 
 function fillSquare(b,p,v){
   var clone = b.slice(0, b.length);
@@ -182,8 +182,30 @@ function fillSquare(b,p,v){
 
 // Фильтрует массив досок оставляя только те доски
 // в которых ни одна фигурка не атакует другую
-// @param  {arrayof: Board}
+// @param  {arrayof: Board} lob
 // @return {arrayof: Board}
+//function keepOnlyValid(lob){ return []; } // заглушка
+
+(function(){
+  console.log("Тест12:", keepOnlyValid([[B]]).toString()==[[B]].toString());
+  console.log("Тест13:", keepOnlyValid([[Q]]).toString()==[[Q]].toString());
+  console.log("Тест14:", function(){
+    var lob = [
+      [Q,Q,B,B],
+      [B,Q,Q,B],
+      [B,Q,B,Q]
+    ];
+    return keepOnlyValid(lob).length==0;
+  }());
+})();
+
+function keepOnlyValid(lob){
+  return lob.filter(function(b){ return isValid(b); });
+}
+
+// Проверяет валидна ли доска
+// @param {Board} b Доска
+// @return {Boolean} true - доска валидна, иначе false
 // !!!
-function keepOnlyValid(b){ return []; } // заглушка
+function isValid(b){ return false; }
 
