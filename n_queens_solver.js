@@ -228,25 +228,52 @@ function isValid(b){ return false; }
 })();
 
 function isValid(b){
+  // TODO: вот эту штуку надо развернуть так, чтобы были формулы для подсчета атак а рекурсия отдельно
   // Атакует по горизонтали?
+  // @param {Integer} thisPos   Позиция этой фигурки
+  // @param {Integer} othersPos Позиция остальных фигурок
   // @return {Boolean}
-  // !!!
-  function isAttackByHorizontal(){
-    return false;
+  function isAttackByHorizontal(thisPos, othersPos){
+    if(othersPos.length==0){
+      return true;
+    }else{
+      var othersFirst = othersPos[0];
+      var othersRest  = othersPos.slice(1, othersPos.length);
+      return !(posToRow(thisPos)==posToRow(othersFirst)) &&
+        isAttackByHorizontal(thisPos, othersRest);
+    }
   }
 
   // Атакует по вертикали?
+  // @param {Integer} thisPos   Позиция этой фигурки
+  // @param {Integer} othersPos Позиция остальных фигурок
   // @return {Boolean}
-  // !!!
-  function isAttackByVertical(){
-    return false;
+  function isAttackByVertical(thisPos, othersPos){
+    if(othersPos.length==0){
+      return true;
+    }else{
+      var othersFirst = othersPos[0];
+      var othersRest  = othersPos.slice(1, othersPos.length);
+      return !(posToCol(thisPos)==posToCol(othersFirst)) &&
+        isAttackByVertical(thisPos, othersRest);
+    }
   }
 
   // Атакует по диагонали?
+  // @param {Integer} thisPos   Позиция этой фигурки
+  // @param {Integer} othersPos Позиция остальных фигурок
   // @return {Boolean}
-  // !!!
-  function isAttackByDiagonal(){
-    return false;
+  function isAttackByDiagonal(thisPos, othersPos){
+    if(othersPos.length==0){
+      return true;
+    }else{
+      var othersFirst = othersPos[0];
+      var othersRest  = othersPos.slice(1, othersPos.length);
+      var rowDiff     = posToRow(thisPos) - posToRow(othersFirst);
+      var colDiff     = posToCol(thisPos) - posToRow(othersFirst);
+      return !(Math.abs(rowDiff/colDiff)==1) &&
+        isAttackByDiagonal(othersRest);
+    }
   }
 }
 
