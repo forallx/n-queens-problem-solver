@@ -207,7 +207,7 @@ function keepOnlyValid(lob){
 // @param {Board} b Доска
 // @return {Boolean} true - доска валидна, иначе false
 // !!!
-function isValid(b){ return false; }
+//function isValid(b){ return false; }
 
 (function(){
   // Не валидна если фигурки на одной горизонтали
@@ -273,6 +273,24 @@ function isValid(b){
       var colDiff     = posToCol(thisPos) - posToRow(othersFirst);
       return !(Math.abs(rowDiff/colDiff)==1) &&
         isAttackByDiagonal(othersRest);
+    }
+  }
+
+  // Возвращает массив со всеми позициями фигурок на доске
+  // @param  {Ineger} curPos Текущая позиция
+  // @param  {Board}  board  Доска
+  // @return {array of integer}
+  function getFiguresPos(curPos, board){
+    if(board.length==0){
+      return [];
+    }else{
+      var first = board[0];
+      var rest  = board.slice(1, board.length);
+      if(first==Q){
+        return [curPos].concat(getFiguresPos(curPos+1, rest));
+      }else{
+        return getFiguresPos(curPos+1, rest);
+      }
     }
   }
 }
