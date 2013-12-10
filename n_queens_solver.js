@@ -90,16 +90,18 @@ function solve(b){
 };
 
 (function(){
-  console.log("Тест4:", solve(createEmptyBoard(1))==[Q]);
+  console.log("Тест4:", solve(createEmptyBoard(1)).toString()==[Q].toString());
   console.log("Тест5:", solve(createEmptyBoard(2))==false);
-  console.log("Тест6:", solve(createEmptyBoard(4))==n4solBrd);
+  console.log("Тест6:", solve(createEmptyBoard(4)).toString()==n4solBrd.toString());
 })();
 
 // Является ли данная доска решением?
 // @param  {Board} b
 // @return {Boolean}
-// !!!
-function isSolved(b){ return false; } // Заглушка
+//function isSolved(b){ return false; } // Заглушка
+function isSolved(b){
+  return isValid(b) && getFiguresPos(0, b).length==getBoardSize(b);
+}
 
 // Создает массив потомков данной доски
 // Все несостоятельные доски вырезаются
@@ -276,24 +278,6 @@ function isValid(b){
     }
   }
 
-  // Возвращает массив со всеми позициями фигурок на доске
-  // @param  {Integer} curPos Текущая позиция
-  // @param  {Board}  board  Доска
-  // @return {array of integer}
-  function getFiguresPos(curPos, board){
-    if(board.length==0){
-      return [];
-    }else{
-      var first = board[0];
-      var rest  = board.slice(1, board.length);
-      if(first==Q){
-        return [curPos].concat(getFiguresPos(curPos+1, rest));
-      }else{
-        return getFiguresPos(curPos+1, rest);
-      }
-    }
-  }
-
   // Проверяет не атакуют ли фигурки друг друга
   // @param  {array of integers} Массив позиций фигурок на доске
   // @return {Boolean} true если фигурки не атакуют друг-друга
@@ -311,6 +295,25 @@ function isValid(b){
   }
 
   return checkFigures(getFiguresPos(0, b));
+}
+
+// Возвращает массив со всеми позициями фигурок на доске
+// @param  {Integer} curPos Текущая позиция
+// @param  {Board}  board  Доска
+// @return {array of integer}
+// TODO: вынес эту функцию из скоба isValid для того чтобы проверять количество фигурок на доске
+function getFiguresPos(curPos, board){
+  if(board.length==0){
+    return [];
+  }else{
+    var first = board[0];
+    var rest  = board.slice(1, board.length);
+    if(first==Q){
+      return [curPos].concat(getFiguresPos(curPos+1, rest));
+    }else{
+      return getFiguresPos(curPos+1, rest);
+    }
+  }
 }
 
 
