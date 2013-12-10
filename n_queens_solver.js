@@ -239,7 +239,7 @@ function isValid(b){
     }else{
       var othersFirst = othersPos[0];
       var othersRest  = othersPos.slice(1, othersPos.length);
-      return !(posToRow(thisPos)==posToRow(othersFirst)) &&
+      return !(posToRow(thisPos, b)==posToRow(othersFirst, b)) &&
         isAttackByHorizontal(thisPos, othersRest);
     }
   }
@@ -254,7 +254,7 @@ function isValid(b){
     }else{
       var othersFirst = othersPos[0];
       var othersRest  = othersPos.slice(1, othersPos.length);
-      return !(posToCol(thisPos)==posToCol(othersFirst)) &&
+      return !(posToCol(thisPos, b)==posToCol(othersFirst, b)) &&
         isAttackByVertical(thisPos, othersRest);
     }
   }
@@ -269,15 +269,15 @@ function isValid(b){
     }else{
       var othersFirst = othersPos[0];
       var othersRest  = othersPos.slice(1, othersPos.length);
-      var rowDiff     = posToRow(thisPos) - posToRow(othersFirst);
-      var colDiff     = posToCol(thisPos) - posToRow(othersFirst);
+      var rowDiff     = posToRow(thisPos, b) - posToRow(othersFirst, b);
+      var colDiff     = posToCol(thisPos, b) - posToCol(othersFirst, b);
       return !(Math.abs(rowDiff/colDiff)==1) &&
-        isAttackByDiagonal(othersRest);
+        isAttackByDiagonal(thisPos, othersRest);
     }
   }
 
   // Возвращает массив со всеми позициями фигурок на доске
-  // @param  {Ineger} curPos Текущая позиция
+  // @param  {Integer} curPos Текущая позиция
   // @param  {Board}  board  Доска
   // @return {array of integer}
   function getFiguresPos(curPos, board){
@@ -293,6 +293,24 @@ function isValid(b){
       }
     }
   }
+
+  // Проверяет не атакуют ли фигурки друг друга
+  // @param  {array of integers} Массив позиций фигурок на доске
+  // @return {Boolean} true если фигурки не атакуют друг-друга
+  function checkFigures(positions){
+    if(positions.length==0){
+      return true; // базовый случай
+    }else{
+      var first = positions[0];
+      var rest  = positions.slice(1, positions.length);
+      return isAttackByHorizontal(first, rest) &&
+        isAttackByVertical(first, rest) &&
+        isAttackByDiagonal(first, rest) &&
+        checkFigures(rest);
+    }
+  }
+
+  return checkFigures(getFiguresPos(0, b));
 }
 
 
