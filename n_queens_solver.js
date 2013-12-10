@@ -227,3 +227,62 @@ function isValid(b){ return false; }
   console.log("Тест22:", isValid(n4solBrd)==true);
 })();
 
+function isValid(b){
+  // Атакует по горизонтали?
+  // @return {Boolean}
+  // !!!
+  function isAttackByHorizontal(){
+    return false;
+  }
+
+  // Атакует по вертикали?
+  // @return {Boolean}
+  // !!!
+  function isAttackByVertical(){
+    return false;
+  }
+
+  // Атакует по диагонали?
+  // @return {Boolean}
+  // !!!
+  function isAttackByDiagonal(){
+    return false;
+  }
+}
+
+
+// Считает размерность доски исходя из количества элементов
+// @param  {Board}   Доска
+// @return {Natural} Размерность доски
+(function(){
+  console.log("Тест23:", getBoardSize(n4emptBrd)==4);
+})();
+
+function getBoardSize(board){
+  return Math.sqrt(board.length);
+}
+
+// Переводит позицию фигурки в строку
+// @param  {Integer} Позиция доски
+// @param  {Board}   Доска
+// @return {Integer} Строка на которой стоит фигурка. Zero-base
+(function(){
+  console.log("Тест24:", posToRow(1, n4emptBrd)==0);
+})();
+
+function posToRow(pos, board){
+  // Тут важно округлить в меньшую сторону
+  return Math.floor(pos/getBoardSize(board));
+}
+
+// Переводит позицию фигурки в столбец
+// @param  {Integer} Позиция доски
+// @param  {Board}   Доска
+// @return {Integer} Колонка на которой стоит фигурка. Zero-base
+(function(){
+  console.log("Тест25:", posToCol(5, n4emptBrd)==1);
+})();
+
+function posToCol(pos, board){
+  return pos%getBoardSize(board);
+}
