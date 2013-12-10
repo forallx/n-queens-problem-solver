@@ -99,6 +99,7 @@ function solve(b){
 // @param  {Board} b
 // @return {Boolean}
 //function isSolved(b){ return false; } // Заглушка
+// TODO: тесты
 function isSolved(b){
   return isValid(b) && getFiguresPos(0, b).length==getBoardSize(b);
 }
