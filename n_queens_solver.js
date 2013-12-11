@@ -353,3 +353,21 @@ function posToRow(pos, board){
 function posToCol(pos, board){
   return pos%getBoardSize(board);
 }
+
+// Тест производительности,
+// @param {Natural} startSizeOfBoard Начальный размер доски
+// @param {Natural} endSizeOfBoard   Конечный размер доски
+// @return {true} Тест закончился
+function benchmark(startSizeOfBoard, maxSizeOfBoard){
+  if(startSizeOfBoard>maxSizeOfBoard){
+    return true;
+  }else{
+    console.log("Считаем для доски с размерностью:", startSizeOfBoard);
+    var startTime = Date.now();
+    var solution  = solve(createEmptyBoard(startSizeOfBoard));
+    var endTime   = Date.now();
+    console.log("Решение:", solution.toString());
+    console.log("Затраченное время:", endTime - startTime, "миллисекунд");
+    return benchmark(startSizeOfBoard+1, maxSizeOfBoard);
+  }
+}
