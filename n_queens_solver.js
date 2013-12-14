@@ -26,7 +26,7 @@ function createEmptyBoard(n){
 
 // Тесты для функции createEmptyBoard
 (function(){
-  console.log("Тест3:", createEmptyBoard(4).length==16);
+  console.log("Тест1:", createEmptyBoard(4).length==16);
 })();
 
 // Решает проблемы n-ферзей
@@ -72,16 +72,16 @@ function solve(b){
 };
 
 (function(){
-  console.log("Тест4:", solve(createEmptyBoard(1)).toString()==[Q].toString());
-  console.log("Тест5:", solve(createEmptyBoard(2))==false);
-  console.log("Тест6:", solve(createEmptyBoard(4)).toString()==n4solBrd.toString());
+  console.log("Тест2:", solve(createEmptyBoard(1)).toString()==[Q].toString());
+  console.log("Тест3:", solve(createEmptyBoard(2))==false);
+  console.log("Тест4:", solve(createEmptyBoard(4)).toString()==n4solBrd.toString());
 })();
 
 // Является ли данная доска решением?
 // @param  {Board} b
 // @return {Boolean}
 //function isSolved(b){ return false; } // Заглушка
-// TODO: тесты
+// TODO: Тесты
 function isSolved(b){
   return isValid(b) && getFiguresPos(0, b).length==getBoardSize(b);
 }
@@ -97,7 +97,7 @@ function nextBoards(b){
 
 // Тесты для nextBoards
 (function(){
-  console.log("Тест7:", nextBoards(createEmptyBoard(1)).toString()==keepOnlyValid(fillBlanks(createEmptyBoard(1))).toString());
+  console.log("Тест5:", nextBoards(createEmptyBoard(1)).toString()==keepOnlyValid(fillBlanks(createEmptyBoard(1))).toString());
 })();
 
 // Создает массив досок в которых в каждой пустой клетке
@@ -131,14 +131,14 @@ function fillBlanks(b){
 // Тесты для fillBlanks
 (function(){
   console.log(
-    "Тест8:",
+    "Тест6:",
     (function(){
       var x = fillBlanks(createEmptyBoard(1));
       return x.length==1 && x[0][0]==Q;
     })());
-  console.log("тест9:", fillBlanks([Q]).length==0);
+  console.log("Тест7:", fillBlanks([Q]).length==0);
   console.log(
-    "тест10:",
+    "Тест8:",
     (function(){
       var x = fillBlanks(createEmptyBoard(2));
       return x.length==4 &&
@@ -156,7 +156,7 @@ function fillBlanks(b){
 
 // Тесты для fillSquare
 (function(){
-  console.log("Тест11:", fillSquare([B],0,Q).toString()==[Q].toString());
+  console.log("Тест9:", fillSquare([B],0,Q).toString()==[Q].toString());
 })()
 
 function fillSquare(b,p,v){
@@ -172,9 +172,9 @@ function fillSquare(b,p,v){
 //function keepOnlyValid(lob){ return []; } // заглушка
 
 (function(){
-  console.log("Тест12:", keepOnlyValid([[B]]).toString()==[[B]].toString());
-  console.log("Тест13:", keepOnlyValid([[Q]]).toString()==[[Q]].toString());
-  console.log("Тест14:", function(){
+  console.log("Тест10:", keepOnlyValid([[B]]).toString()==[[B]].toString());
+  console.log("Тест11:", keepOnlyValid([[Q]]).toString()==[[Q]].toString());
+  console.log("Тест12:", function(){
     var lob = [
       [Q,Q,B,B],
       [B,Q,Q,B],
@@ -196,20 +196,20 @@ function keepOnlyValid(lob){
 
 (function(){
   // Не валидна если фигурки на одной горизонтали
-  console.log("Тест16:", isValid([Q,Q,
+  console.log("Тест13:", isValid([Q,Q,
                                   B,B])==false);
   // Не валидна если фигурки на одной вертикали
-  console.log("Тест17:", isValid([Q,B,
+  console.log("Тест14:", isValid([Q,B,
                                   Q,B])==false);
   // Не валидна если фигурки на одной диагонали
-  console.log("Тест18:", isValid([Q,B,
+  console.log("Тест15:", isValid([Q,B,
                                   B,Q])==false);
-  console.log("Тест19:", isValid([B,Q,
+  console.log("Тест16:", isValid([B,Q,
                                   Q,B])==false);
   // Валидные доски
-  console.log("Тест20:", isValid([Q])==true);
-  console.log("Тест21:", isValid(n4emptBrd)==true);
-  console.log("Тест22:", isValid(n4solBrd)==true);
+  console.log("Тест17:", isValid([Q])==true);
+  console.log("Тест18:", isValid(n4emptBrd)==true);
+  console.log("Тест19:", isValid(n4solBrd)==true);
 })();
 
 function isValid(b){
@@ -304,7 +304,7 @@ function getFiguresPos(curPos, board){
 // @param  {Board}   Доска
 // @return {Natural} Размерность доски
 (function(){
-  console.log("Тест23:", getBoardSize(n4emptBrd)==4);
+  console.log("Тест20:", getBoardSize(n4emptBrd)==4);
 })();
 
 function getBoardSize(board){
@@ -316,7 +316,7 @@ function getBoardSize(board){
 // @param  {Board}   Доска
 // @return {Integer} Строка на которой стоит фигурка. Zero-base
 (function(){
-  console.log("Тест24:", posToRow(1, n4emptBrd)==0);
+  console.log("Тест21:", posToRow(1, n4emptBrd)==0);
 })();
 
 function posToRow(pos, board){
@@ -329,7 +329,7 @@ function posToRow(pos, board){
 // @param  {Board}   Доска
 // @return {Integer} Колонка на которой стоит фигурка. Zero-base
 (function(){
-  console.log("Тест25:", posToCol(5, n4emptBrd)==1);
+  console.log("Тест22:", posToCol(5, n4emptBrd)==1);
 })();
 
 function posToCol(pos, board){
