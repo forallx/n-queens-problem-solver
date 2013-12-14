@@ -15,24 +15,6 @@ var n4solBrd = [B, Q, B, B,
                 Q, B, B, B,
                 B, B, Q, B];
 
-// Конвертирует позицию вида ряд:столбец
-// в индекс плоского массива
-// Все индексы начинаются с нуля.
-// @param  {Integer[0...]} r Ряд
-// @param  {Integer[0...]} c Столбец
-// @param  {Natural}       n Размерность доски
-// @return {Natural} Позиция
-function rcToPos(r,c,n){
-  return r*n+c;
-};
-
-// Тесты для функции rcToPos
-(function(){
-  console.log("Тест1:", n4solBrd[rcToPos(0,1,4)]==Q);
-  console.log("Тест2:", n4solBrd[rcToPos(3,3,4)]==B);
-})();
-
-
 // Создает пустую доску n*n элементов
 // @param {Natural} n Размерность доски
 // @return {Board}
