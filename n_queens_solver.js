@@ -90,10 +90,14 @@ function solve(b){
   * @return {Boolean}
   */
 //function isSolved(b){ return false; } // Заглушка
-// TODO: Тесты
 function isSolved(b){
   return isValid(b) && getFiguresPos(0, b).length==getBoardSize(b);
 }
+
+(function(){
+  console.log("Тест23:", isSolved(n4emptBrd)==false);
+  console.log("Тест24:", isSolved(n4solBrd)==true);
+})();
 
 /** Создает массив потомков данной доски
   * Все несостоятельные доски вырезаются
