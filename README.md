@@ -18,7 +18,7 @@
 
 Мои результаты в оригинальном [посте](http://forallx.ru).
 
-[Документация](https://rawgithub.com/ch-ms/n-queens-problem-solver/master/doc/index.html)
+[Документация](https://rawgithub.com/ch-ms/n-queens-problem-solver/master/doc/global.html)
 
 ---
 Евгений Кузнецов, [forallx.ru](http://forallx.ru)
