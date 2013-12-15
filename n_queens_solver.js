@@ -167,16 +167,14 @@ function fillBlanks(b){
   * @param {Natural} p Позиция
   * @param {Q | B}   v Ферзь или пустая?
   */
-// Тесты для fillSquare
-(function(){
-  console.log("Тест9:", fillSquare([B],0,Q).toString()==[Q].toString());
-})()
-
 function fillSquare(b,p,v){
   var clone = b.slice(0, b.length);
   clone[p]=v;
   return clone;
 }
+(function(){
+  console.log("Тест9:", fillSquare([B],0,Q).toString()==[Q].toString());
+})()
 
 /** Фильтрует массив досок оставляя только те доски
     в которых ни одна фигурка не атакует другую
@@ -308,13 +306,14 @@ function getFiguresPos(curPos, board){
   * @param  {Board}   Доска
   * @return {Natural} Размерность доски
   */
+function getBoardSize(board){
+  return Math.sqrt(board.length);
+}
+
 (function(){
   console.log("Тест20:", getBoardSize(n4emptBrd)==4);
 })();
 
-function getBoardSize(board){
-  return Math.sqrt(board.length);
-}
 
 /** Переводит позицию фигурки в строку
   * @param  {Integer} Позиция доски

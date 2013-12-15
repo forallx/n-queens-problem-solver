@@ -464,7 +464,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line353">line 353</a>
+        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line351">line 351</a>
     </li></ul></dd>
     
     
@@ -785,6 +785,311 @@
         
             
 <dt>
+    <h4 class="name" id="fillSquare"><span class="type-signature"></span>fillSquare<span class="signature">(b, p, v)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Ставит на доску в данную позицию данное значение (ферзь или пустая)
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Board</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Доска</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>p</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Natural</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Позиция</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>v</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Q">Q</a></span>
+|
+
+<span class="param-type"><a href="global.html#B">B</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Ферзь или пустая?</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line170">line 170</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getBoardSize"><span class="type-signature"></span>getBoardSize<span class="signature">(Доска)</span><span class="type-signature"> &rarr; {Natural}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Считает размерность доски исходя из количества элементов
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>Доска</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Board</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line309">line 309</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Размерность доски
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Natural</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
     <h4 class="name" id="getFiguresPos"><span class="type-signature"></span>getFiguresPos<span class="signature">(curPos, board)</span><span class="type-signature"> &rarr; {array.&lt;Integer>}</span></h4>
     
     
@@ -897,7 +1202,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line293">line 293</a>
+        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line290">line 290</a>
     </li></ul></dd>
     
     
@@ -1167,7 +1472,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line209">line 209</a>
+        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line207">line 207</a>
     </li></ul></dd>
     
     
@@ -1307,7 +1612,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line187">line 187</a>
+        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line185">line 185</a>
     </li></ul></dd>
     
     
@@ -1601,7 +1906,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line339">line 339</a>
+        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line337">line 337</a>
     </li></ul></dd>
     
     
@@ -1763,7 +2068,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line325">line 325</a>
+        <a href="n_queens_solver.js.html">n_queens_solver.js</a>, <a href="n_queens_solver.js.html#line323">line 323</a>
     </li></ul></dd>
     
     
@@ -1968,13 +2273,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Global</h3><ul><li><a href="global.html#B">B</a></li><li><a href="global.html#benchmark">benchmark</a></li><li><a href="global.html#createEmptyBoard">createEmptyBoard</a></li><li><a href="global.html#fillBlanks">fillBlanks</a></li><li><a href="global.html#getFiguresPos">getFiguresPos</a></li><li><a href="global.html#isSolved">isSolved</a></li><li><a href="global.html#isValid">isValid</a></li><li><a href="global.html#keepOnlyValid">keepOnlyValid</a></li><li><a href="global.html#n4emptBrd">n4emptBrd</a></li><li><a href="global.html#n4solBrd">n4solBrd</a></li><li><a href="global.html#nextBoards">nextBoards</a></li><li><a href="global.html#posToCol">posToCol</a></li><li><a href="global.html#posToRow">posToRow</a></li><li><a href="global.html#Q">Q</a></li><li><a href="global.html#solve">solve</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Global</h3><ul><li><a href="global.html#B">B</a></li><li><a href="global.html#benchmark">benchmark</a></li><li><a href="global.html#createEmptyBoard">createEmptyBoard</a></li><li><a href="global.html#fillBlanks">fillBlanks</a></li><li><a href="global.html#fillSquare">fillSquare</a></li><li><a href="global.html#getBoardSize">getBoardSize</a></li><li><a href="global.html#getFiguresPos">getFiguresPos</a></li><li><a href="global.html#isSolved">isSolved</a></li><li><a href="global.html#isValid">isValid</a></li><li><a href="global.html#keepOnlyValid">keepOnlyValid</a></li><li><a href="global.html#n4emptBrd">n4emptBrd</a></li><li><a href="global.html#n4solBrd">n4solBrd</a></li><li><a href="global.html#nextBoards">nextBoards</a></li><li><a href="global.html#posToCol">posToCol</a></li><li><a href="global.html#posToRow">posToRow</a></li><li><a href="global.html#Q">Q</a></li><li><a href="global.html#solve">solve</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha2</a> on Sun Dec 15 2013 14:12:29 GMT+0400 (MSK)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha2</a> on Sun Dec 15 2013 15:38:44 GMT+0400 (MSK)
 </footer>
 
 <script> prettyPrint(); </script>
