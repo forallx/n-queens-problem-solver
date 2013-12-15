@@ -17,6 +17,7 @@ var n4emptBrd = [B, B, B, B,
                  B, B, B, B,
                  B, B, B, B,
                  B, B, B, B];
+
 /** Решение для доски с размерностью 4
   * @type {Board}
   */
