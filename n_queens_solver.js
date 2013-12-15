@@ -34,7 +34,7 @@ function createEmptyBoard(n){
   var b = [];
   for(var i=0;i<n*n;i++){ b.push(B); }
   return b;
-};
+}
 
 // Тесты для функции createEmptyBoard
 (function(){
@@ -45,7 +45,7 @@ function createEmptyBoard(n){
   * @param  {Board} b Доска
   * @return {Board | false} Если задача имеет решение - доску, иначе false
   */
-// function solve(b){return false}; // заглушка
+// function solve(b){return false; } // заглушка
 function solve(b){
    // Ищет решение для данной доски
    // @param {Board} b
@@ -56,7 +56,7 @@ function solve(b){
     }else{
       return solveChilds(nextBoards(b));
     }
-  };
+  }
 
   // Ищет решения для списка потомков
   // @param {array.<Board>} lob
@@ -75,10 +75,10 @@ function solve(b){
         return solveChilds(rest);
       }
     }
-  };
+  }
 
   return solveBrd(b);
-};
+}
 
 (function(){
   console.log("Тест2:", solve(createEmptyBoard(1)).toString()==[Q].toString());
