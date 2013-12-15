@@ -289,7 +289,6 @@ function isValid(b){
   * @param  {Board}  board  Доска
   * @return {array.<Integer>}
   */
-// TODO: вынес эту функцию из скоба isValid для того чтобы проверять количество фигурок на доске
 function getFiguresPos(curPos, board){
   if(board.length==0){
     return [];
