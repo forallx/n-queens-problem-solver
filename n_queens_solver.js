@@ -173,9 +173,11 @@ function fillSquare(b,p,v){
   clone[p]=v;
   return clone;
 }
+
+// Тесты для функции fillSquare
 (function(){
   console.log("Тест9:", fillSquare([B],0,Q).toString()==[Q].toString());
-})()
+})();
 
 /** Фильтрует массив досок оставляя только те доски
     в которых ни одна фигурка не атакует другую
