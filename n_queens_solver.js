@@ -267,6 +267,7 @@ function isValid(b){
   return checkFigures(getFiguresPos(0, b));
 }
 
+// Тесты для функции isValid
 (function(){
   // Не валидна если фигурки на одной горизонтали
   console.log("Тест13:", isValid([Q,Q,
@@ -304,7 +305,6 @@ function getFiguresPos(curPos, board){
   }
 }
 
-
 /** Считает размерность доски исходя из количества элементов
   * @param  {Board}   Доска
   * @return {Natural} Размерность доски
@@ -313,10 +313,10 @@ function getBoardSize(board){
   return Math.sqrt(board.length);
 }
 
+// Тесты для функции getBoardSize
 (function(){
   console.log("Тест20:", getBoardSize(n4emptBrd)==4);
 })();
-
 
 /** Переводит позицию фигурки в строку
   * @param  {Integer} Позиция доски
@@ -328,6 +328,7 @@ function posToRow(pos, board){
   return Math.floor(pos/getBoardSize(board));
 }
 
+// Тесты для функции posToRow
 (function(){
   console.log("Тест21:", posToRow(1, n4emptBrd)==0);
 })();
@@ -341,6 +342,7 @@ function posToCol(pos, board){
   return pos%getBoardSize(board);
 }
 
+// Тесты для функции posToCol
 (function(){
   console.log("Тест22:", posToCol(5, n4emptBrd)==1);
 })();
