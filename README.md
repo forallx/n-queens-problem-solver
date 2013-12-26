@@ -14,7 +14,7 @@
 
 Так же есть функция теста производительности [benchmark](https://rawgithub.com/ch-ms/n-queens-problem-solver/master/doc/global.html#benchmark).
 Запустите ее со следующими параметрами:
-`benchmark(1,16);`
+`benchmark(1,10);`
 
 Мои результаты в оригинальном [посте](http://forallx.ru).
 
